@@ -28,7 +28,14 @@ public class Rocket : MonoBehaviour
         {
             print("Thrusting");
             rigidBody.AddRelativeForce(Vector3.up);
-            thurstSFX.Play();
+            if (!thurstSFX.isPlaying) //
+            {
+                thurstSFX.Play();
+            }
+        }
+        else
+        {
+            thurstSFX.Stop();
         }
 
         if (Input.GetKey(KeyCode.A))

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5e75179-2766-4796-a39d-2db061a76512" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Rocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Rocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rocket Body.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rocket Body.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PowerUP(Unity3D)/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PowerUP(Unity3D)/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="18" />
     <option name="y" value="34" />
     <option name="width" value="1221" />
@@ -126,12 +124,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563633750146</updated>
-      <workItem from="1563633760066" duration="4149000" />
+      <workItem from="1563633760066" duration="4406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4149000" />
+    <option name="totallyTimeSpent" value="4406000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
