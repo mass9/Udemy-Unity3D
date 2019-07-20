@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 2552164441184254137, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.93
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 2552164441184254137, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
         type: 3}
@@ -190,7 +190,37 @@ PrefabInstance:
     - target: {fileID: 3593073034065787575, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
         type: 3}
       propertyPath: m_Mass
-      value: 0.1
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593073034065787575, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593073034065787575, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376610473613292231, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c92fc205c525cc3a1b4592d531d589d4, type: 3}
+    - target: {fileID: 5376610473613292231, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376610473613292231, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: m_Pitch
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376610473613292231, guid: 78f1e8607fcee12a7acf300f1f3c2b20,
+        type: 3}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f1e8607fcee12a7acf300f1f3c2b20, type: 3}
@@ -434,6 +464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477066258720125382, guid: 5b09d5a43c5da1f9dab05ec4c05c1b19,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b09d5a43c5da1f9dab05ec4c05c1b19, type: 3}
