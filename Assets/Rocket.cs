@@ -29,13 +29,13 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             print("Turn Left");
-            rigidBody.AddRelativeForce(Vector3.left);
+            transform.Rotate(Vector3.forward);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             print("Turn Right");
-            rigidBody.AddRelativeForce(Vector3.right);
+            transform.Rotate(new Vector3(0,0,-1));
         }
     }
 }
