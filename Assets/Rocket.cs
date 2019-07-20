@@ -35,7 +35,7 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             print("Turn Right");
-            transform.Rotate(new Vector3(0,0,-1));
+            transform.Rotate(- Vector3.forward);
         }
     }
 }
