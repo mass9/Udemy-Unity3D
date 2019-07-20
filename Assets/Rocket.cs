@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
@@ -26,7 +27,23 @@ public class Rocket : MonoBehaviour
         Thrust();
         Rotate();
     }
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Launch Pad":
+                //do nothing
+                 break;
+            
+            case  "Dead":
+                Destroy(gameObject);
+                
+                print("You are dead now");
+                break;
+        }
+    }
+
     private void Thrust()
     {
         if (Input.GetKey(KeyCode.Space))
