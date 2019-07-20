@@ -9,6 +9,10 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody; //to access rigid body components
 
     AudioSource thurstSFX;
+    
+    [SerializeField] float rcsThrust = 100f;
+
+    [SerializeField]  float mainthrust = 100f;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +31,10 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            float straight = mainthrust * Time.deltaTime;
+                
             print("Thrusting");
-            rigidBody.AddRelativeForce(Vector3.up);
+            rigidBody.AddRelativeForce(Vector3.up * straight);
             if (!thurstSFX.isPlaying) //
             {
                 thurstSFX.Play();
@@ -47,16 +53,20 @@ public class Rocket : MonoBehaviour
     {
 
         rigidBody.freezeRotation = true;
+        
+        float rotationFrame = rcsThrust * Time.deltaTime;
+        
         if (Input.GetKey(KeyCode.A))
         {
+            
             print("Turn Left");
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotationFrame) ;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             print("Turn Right");
-            transform.Rotate(- Vector3.forward);
+            transform.Rotate(- Vector3.forward* rotationFrame);
         }
 
         rigidBody.freezeRotation = false;
