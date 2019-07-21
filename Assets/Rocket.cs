@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -27,24 +27,30 @@ public class Rocket : MonoBehaviour
         Thrust();
         Rotate();
     }
-
+    int i=0;
     private void OnCollisionEnter(Collision other)
     {
         switch (other.gameObject.tag)
         {
+                
             case "Launch Pad":
                 //do nothing
                  break;
             
             case "Finish":
                 print("You've won");
+                SceneManager.LoadScene(i +1);
+                i += 1;
                 break;
+            
             case  "Dead":
                 Destroy(gameObject);
-                
+                SceneManager.LoadScene(i);
                 print("You are dead now");
                 break;
         }
+
+        
     }
 
     private void Thrust()
