@@ -10,6 +10,10 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody; //to access rigid body components
     AudioSource thurstSFX;
 
+    [SerializeField] ParticleSystem mainEngineParticle;
+    [SerializeField] ParticleSystem successParticle;
+    [SerializeField] ParticleSystem deathParticle;
+    
     enum State
     {
         Alive,
@@ -19,6 +23,7 @@ public class Rocket : MonoBehaviour
 
     private State state = State.Alive;
 
+   
 
     [SerializeField] float rcsThrust = 100f;
 
@@ -28,6 +33,8 @@ public class Rocket : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody>();
         thurstSFX = GetComponent<AudioSource>();
+        mainEngineParticle.Play();
+
     }
 
     // Update is called once per frame
@@ -35,10 +42,10 @@ public class Rocket : MonoBehaviour
     {
         if (state == State.Alive)
         {
-            
+            Thrust();
+            Rotate();
         }
-        Thrust();
-        Rotate();
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -57,15 +64,18 @@ public class Rocket : MonoBehaviour
                  break;
             
             case "Finish":
+                successParticle.Play();
                 state = State.Transceding;
                 print("You've won");
+                
                 Invoke("LoadNextScene",1f); //Load after 1 second
                 break;
             
             case  "Dead":
+                deathParticle.Play();
                 state = State.Dying;
                 Invoke("LoadSameScene",1f); 
-            
+                
                 print("You are dead now");
                 break;
         }
@@ -88,16 +98,20 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             float straight = mainthrust * Time.deltaTime;
-                
+            mainEngineParticle.Play();
+
             print("Thrusting");
             rigidBody.AddRelativeForce(Vector3.up * straight);
+           
             if (!thurstSFX.isPlaying) //
             {
                 thurstSFX.Play();
+             
             }
         }
         else
         {
+            mainEngineParticle.Stop();
             thurstSFX.Stop();
         }
 
