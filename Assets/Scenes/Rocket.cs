@@ -13,6 +13,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem mainEngineParticle;
     [SerializeField] ParticleSystem successParticle;
     [SerializeField] ParticleSystem deathParticle;
+    [SerializeField] float LevelLoadDelay = 2f;
     
     enum State
     {
@@ -68,13 +69,13 @@ public class Rocket : MonoBehaviour
                 state = State.Transceding;
                 print("You've won");
                 
-                Invoke("LoadNextScene",1f); //Load after 1 second
+                Invoke("LoadNextScene",LevelLoadDelay); //Load after 1 second
                 break;
             
             case  "Dead":
                 deathParticle.Play();
                 state = State.Dying;
-                Invoke("LoadSameScene",1f); 
+                Invoke("LoadSameScene",LevelLoadDelay); 
                 
                 print("You are dead now");
                 break;
@@ -90,7 +91,13 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene( 1);
+        int currentindex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneindex = currentindex + 1;
+        if (nextSceneindex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneindex = 0;
+        }
+        SceneManager.LoadScene(nextSceneindex);
     }
 
     private void Thrust()
