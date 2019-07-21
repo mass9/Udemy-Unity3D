@@ -36,6 +36,9 @@ public class Rocket : MonoBehaviour
                 //do nothing
                  break;
             
+            case "Finish":
+                print("You've won");
+                break;
             case  "Dead":
                 Destroy(gameObject);
                 
